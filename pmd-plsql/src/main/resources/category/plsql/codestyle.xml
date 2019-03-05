@@ -177,4 +177,40 @@ END;
 ]]>
         </example>
     </rule>
+
+    <rule name="MaximumLineLength"
+          language="plsql"
+          message="Line is too long"
+          class="net.sourceforge.pmd.lang.rule.XPathRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#MaxLineLengt">
+    <description>
+        Maximum Line Length
+    </description>
+    <priority>3</priority>
+    <properties>
+        <property name="xpath">
+            <value>
+                <![CDATA[
+//*[@EndColumn > $maxLength]
+]]>
+            </value>
+        </property>
+        <property name="version" value="2.0"/>
+        <property name="maxLength" type="Integer" description="Max line length" value="120" min="1" max="220" />
+    </properties>
+    <!--<example><![CDATA[]]></example>-->
+</rule>
+
+    <rule name="VariableNames"
+          language="plsql"
+          message="Varieble name dont start with p_"
+          class="net.sourceforge.pmd.lang.plsql.rule.codestyle.VariebleNamesRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#MaxLineLengt">
+        <description>
+            Rename names need to be p_.
+        </description>
+        <priority>3</priority>
+        <!--<example><![CDATA[]]></example>-->
+    </rule>
+
 </ruleset>

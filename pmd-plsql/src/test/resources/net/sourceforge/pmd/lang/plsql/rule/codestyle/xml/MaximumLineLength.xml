@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data
+        xmlns="http://pmd.sourceforge.net/rule-tests"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests http://pmd.sourceforge.net/rule-tests_1_0_0.xsd">
+
+    <test-code>
+        <description>MaximumLineLength too long line</description>
+        <expected-problems>5</expected-problems>
+        <code><![CDATA[
+BEGIN
+FOR c IN (SELECT 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, null FROM companies)         LOOP
+  NULL;
+END LOOP;
+END;
+/
+        ]]></code>
+        <source-type>plsql</source-type>
+    </test-code>
+</test-data>
