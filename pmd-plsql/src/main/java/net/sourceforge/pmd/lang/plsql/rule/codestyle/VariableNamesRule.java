@@ -4,7 +4,7 @@ import net.sourceforge.pmd.lang.plsql.ast.ASTFormalParameter;
 import net.sourceforge.pmd.lang.plsql.ast.ASTInput;
 import net.sourceforge.pmd.lang.plsql.rule.AbstractPLSQLRule;
 
-public class VariebleNamesRule extends AbstractPLSQLRule {
+public class VariableNamesRule extends AbstractPLSQLRule {
 
 
     public Object visit(ASTFormalParameter node, Object data) {

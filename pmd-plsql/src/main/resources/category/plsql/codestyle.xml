@@ -180,9 +180,10 @@ END;
 
     <rule name="MaximumLineLength"
           language="plsql"
+          since="6.13.0"
           message="Line is too long"
           class="net.sourceforge.pmd.lang.rule.XPathRule"
-          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#MaxLineLengt">
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#maximumlinelength">
     <description>
         Maximum Line Length
     </description>
@@ -203,9 +204,10 @@ END;
 
     <rule name="VariableNames"
           language="plsql"
+          since="6.13.0"
           message="Varieble name dont start with p_"
-          class="net.sourceforge.pmd.lang.plsql.rule.codestyle.VariebleNamesRule"
-          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#MaxLineLengt">
+          class="net.sourceforge.pmd.lang.plsql.rule.codestyle.VariableNamesRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#variablenames">
         <description>
             Rename names need to be p_.
         </description>
