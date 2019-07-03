@@ -210,4 +210,88 @@ This rule is the PMD equivalent of checkstyle's [LineLength](http://checkstyle.s
         <priority>3</priority>
     </rule>
 
+    <rule name="VariableNames"
+          language="plsql"
+          since="6.13.0"
+          message="Varieble name dont start with p_"
+          class="net.sourceforge.pmd.lang.plsql.rule.codestyle.VariableNamesRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#variablenames">
+        <description>
+            Rename names need to be p_.
+        </description>
+        <priority>3</priority>
+        <example><![CDATA[
+https://alm.andritz.com/confluence/display/ISaagXCRM/Naming+Conventions
+-- good example
+p_opp_id   IN opp_sales_teams.opp_id%TYPE
+
+-- bad example
+o_opp_id   IN opp_sales_teams.opp_id%TYPE
+
+        ]]></example>
+    </rule>
+
+    <rule name="VariableParameterNames"
+          language="plsql"
+          since="6.13.0"
+          message="Varieble name dont start with p_"
+          class="net.sourceforge.pmd.lang.plsql.rule.codestyle.VariableParameterNamesRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#variableparameternames">
+        <description>
+            Rename names need to be p_.
+        </description>
+        <priority>3</priority>
+        <example><![CDATA[
+https://alm.andritz.com/confluence/display/ISaagXCRM/Naming+Conventions
+-- good example
+p_opp_id   IN opp_sales_teams.opp_id%TYPE
+
+-- bad example
+o_opp_id   IN opp_sales_teams.opp_id%TYPE
+
+        ]]></example>
+    </rule>
+
+    <rule name="ReservedWords"
+          language="plsql"
+          since="6.13.0"
+          message="The line is too long."
+          class="net.sourceforge.pmd.lang.plsql.rule.codestyle.ReservedWordsRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#reservedwords">
+        <description>
+            This rule checks for long lines. Please note that comments are not ignored.
+
+            This rule is the PMD equivalent of checkstyle's [LineLength](http://checkstyle.sourceforge.net/config_sizes.html#LineLength) check.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule name="Keywords"
+          language="plsql"
+          since="6.13.0"
+          message="The line is too long."
+          class="net.sourceforge.pmd.lang.plsql.rule.codestyle.KeywordsRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#keywords">
+        <description>
+            This rule checks for long lines. Please note that comments are not ignored.
+
+            This rule is the PMD equivalent of checkstyle's [LineLength](http://checkstyle.sourceforge.net/config_sizes.html#LineLength) check.
+        </description>
+        <priority>3</priority>
+    </rule>
+
+    <rule name="Indentation"
+          language="plsql"
+          since="6.13.0"
+          message="The line is too long."
+          class="net.sourceforge.pmd.lang.plsql.rule.codestyle.IndentationRule"
+          externalInfoUrl="${pmd.website.baseurl}/pmd_rules_plsql_codestyle.html#indentation">
+        <description>
+            This rule checks for long lines. Please note that comments are not ignored.
+
+            This rule is the PMD equivalent of checkstyle's [LineLength](http://checkstyle.sourceforge.net/config_sizes.html#LineLength) check.
+        </description>
+        <priority>3</priority>
+    </rule>
+
 </ruleset>

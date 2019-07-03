@@ -18,6 +18,7 @@ import net.sourceforge.pmd.RuleContext;
 import net.sourceforge.pmd.RuleSets;
 import net.sourceforge.pmd.SourceCodeProcessor;
 import net.sourceforge.pmd.benchmark.TimeTracker;
+import net.sourceforge.pmd.lang.ast.ParseException;
 import net.sourceforge.pmd.renderers.Renderer;
 import net.sourceforge.pmd.util.datasource.DataSource;
 
@@ -77,6 +78,9 @@ public class PmdRunnable implements Callable<Report> {
             tc.ruleContext.setLanguageVersion(null);
             sourceCodeProcessor.processSourceCode(stream, tc.ruleSets, tc.ruleContext);
         } catch (PMDException pmde) {
+            if (pmde.getCause() != null && pmde.getCause() instanceof ParseException) {
+                LOG.log(Level.SEVERE, "Error while processing file: " + fileName, pmde.getCause());
+            }
             addError(report, pmde, "Error while processing file: " + fileName);
         } catch (IOException ioe) {
             addError(report, ioe, "IOException during processing of " + fileName);

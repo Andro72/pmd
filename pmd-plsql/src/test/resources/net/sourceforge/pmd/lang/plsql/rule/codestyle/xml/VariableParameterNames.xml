@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test-data
+        xmlns="http://pmd.sourceforge.net/rule-tests"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://pmd.sourceforge.net/rule-tests http://pmd.sourceforge.net/rule-tests_1_0_0.xsd">
+
+    <test-code>
+        <description>Function paramer neme need to be p_</description>
+        <expected-problems>1</expected-problems>
+        <code><![CDATA[
+create or replace
+PACKAGE BODY  DA.DML_PREPROC AS
+
+  PROCEDURE was_active(
+    sp_rec_new in out nocopy REQUEST_REVISION_MEMBERS%ROWTYPE
+   ,p_rec_old in REQUEST_REVISION_MEMBERS%ROWTYPE
+   ,p_op      in VARCHAR2)
+  AS
+    v_check_assigned NUMBER;
+    r_request_revision_members  request_revision_members%ROWTYPE;
+    CURSOR c_assigned_to_dcm IS
+      SELECT req_rev_mem_id
+        FROM request_revision_members
+        WHERE req_id = p_rec_new.req_id AND rev = p_rec_new.rev
+          AND assigned_to_dcm = p_rec_new.req_mem_id
+          AND was_active != 'Y';
+  BEGIN
+    dbg.msg('Enter pre-processing REQUEST_REVISION_MEMBERS');
+END was_active;
+END DML_PREPROC;
+/
+        ]]></code>
+        <source-type>plsql</source-type>
+    </test-code>
+</test-data>
